@@ -1,13 +1,13 @@
 // components/Dashboard.js
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Redirect } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 const Dashboard = () => {
     const isAuthenticated = useSelector((state) => state.isAuthenticated);
 
     if (!isAuthenticated) {
-        return <Redirect to="/login" />;
+        return <Navigate to="/login" />;
     }
 
     return (
